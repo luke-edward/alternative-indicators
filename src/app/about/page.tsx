@@ -1,44 +1,43 @@
+// pages/about.js
+import React from "react";
 import Link from "next/link";
-import MaxWidthWrapper from "./components/MaxWidthWrapper";
+import MaxWidthWrapper from "../components/MaxWidthWrapper";
 import { ArrowRight } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
-import LineChartComponent from "./components/LineChartComponent";
-import { DateFilter } from "./components/DateFilter";
-import { CategoryFilter } from "./components/CategoryFilter";
-import { Search } from "./components/Search";
-export default function Home() {
+import { buttonVariants } from "@/components/ui/button";
+
+const About = () => {
   return (
     <>
-      <MaxWidthWrapper className="mb-12 mt-28 sm:mt-10 flex flex-col items-center justify-center text-center">
-        <h1 className="max-w-4xl text-2xl font-bold md:text-3xl lg:text-5xl">
-          Alternative Indicators.
+      <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center">
+        <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50">
+          <p className="text-sm animate-in font-semibold text-gray-700">
+            Alternative Indicators is now live!
+          </p>
+        </div>
+        <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
+          Find the best
+          <span style={{ color: "#f72585" }}>
+            &nbsp;alternative indicators
+          </span>{" "}
+          for <span className="text-blue-600"> finance</span> and
+          <span className="text-blue-600"> technology</span> in seconds.
         </h1>
         <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-          We surface market research and trends that are two steps ahead.
+          We allow you to conduct market research and analyze trends that are
+          two steps ahead.
         </p>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            marginTop: "20px",
-          }}
+        <Link
+          className={buttonVariants({
+            size: "lg",
+            className: "mt-5",
+          })}
+          href="/dashboard"
+          target="_blank"
         >
-          <div style={{ marginRight: "20px" }}>
-            <h3>Filter by:</h3>
-          </div>
-          <div style={{ marginRight: "20px" }}>
-            <DateFilter />
-          </div>
-          <div style={{ marginRight: "20px" }}>
-            <CategoryFilter />
-          </div>
-          <div>
-            <Search />
-          </div>
-        </div>
+          Get Started <ArrowRight className="ml-2 h-5 w-5" />
+        </Link>
       </MaxWidthWrapper>
 
       {/* value prop section*/}
@@ -57,25 +56,18 @@ export default function Home() {
             />
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-2 p-4">
+          <div>
             <div className="mx-auto max-w-6xl px-6 lg:px-8">
-              <div className="mt-1 flow-root sm:mt-2">
-                <div className="-m-2 rounded-xl bg-white bg-opacity-80 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 ">
-                  <LineChartComponent />
-                </div>
-              </div>
-            </div>
-            <div className="mx-auto max-w-6xl px-6 lg:px-8">
-              <div className="mt-1 flow-root sm:mt-2">
-                <div className="-m-2 rounded-xl bg-white bg-opacity-80 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 ">
-                  <LineChartComponent />
-                </div>
-              </div>
-            </div>
-            <div className="mx-auto max-w-6xl px-6 lg:px-8">
-              <div className="mt-1 flow-root sm:mt-2">
-                <div className="-m-2 rounded-xl bg-white bg-opacity-80 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 ">
-                  <LineChartComponent />
+              <div className="mt-16 flow-root sm:mt-24">
+                <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 ">
+                  <Image
+                    src="/dashboard-preview.jpg"
+                    alt="product preview"
+                    width={1364}
+                    height={866}
+                    quality={100}
+                    className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
+                  />
                 </div>
               </div>
             </div>
@@ -169,4 +161,6 @@ export default function Home() {
       </div>
     </>
   );
-}
+};
+
+export default About;
