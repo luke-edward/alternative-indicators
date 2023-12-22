@@ -1,13 +1,12 @@
 import Link from "next/link";
 import MaxWidthWrapper from "./components/MaxWidthWrapper";
-import { ArrowRight } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
 import Image from "next/image";
 import LineChartComponent from "./components/LineChartComponent";
 import { DateFilter } from "./components/DateFilter";
 import { CategoryFilter } from "./components/CategoryFilter";
 import { Search } from "./components/Search";
 export default function Home() {
+  const numberofCharts = 3;
   return (
     <>
       <MaxWidthWrapper className="mb-12 mt-28 sm:mt-10 flex flex-col items-center justify-center text-center">
@@ -57,26 +56,12 @@ export default function Home() {
             />
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-2 p-4">
-            <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="">
+            <div className="mx-auto max-w-8xl px-6 lg:px-8">
               <div className="mt-1 flow-root sm:mt-2">
-                <div className="-m-2 rounded-xl bg-white bg-opacity-80 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 ">
-                  <LineChartComponent />
-                </div>
-              </div>
-            </div>
-            <div className="mx-auto max-w-6xl px-6 lg:px-8">
-              <div className="mt-1 flow-root sm:mt-2">
-                <div className="-m-2 rounded-xl bg-white bg-opacity-80 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 ">
-                  <LineChartComponent />
-                </div>
-              </div>
-            </div>
-            <div className="mx-auto max-w-6xl px-6 lg:px-8">
-              <div className="mt-1 flow-root sm:mt-2">
-                <div className="-m-2 rounded-xl bg-white bg-opacity-80 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 ">
-                  <LineChartComponent />
-                </div>
+                {/* <div className="-m-2 rounded-xl bg-white bg-opacity-80 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 "> */}
+                <LineChartComponent />
+                {/* </div> */}
               </div>
             </div>
           </div>

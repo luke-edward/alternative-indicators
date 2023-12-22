@@ -43,7 +43,7 @@ const Page = () => {
     {
       plan: "Pro",
       tagline: "For larger projects with higher needs.",
-      quota: 2,
+      quota: 99,
       features: [
         {
           text: "25 pages per PDF",
@@ -81,7 +81,7 @@ const Page = () => {
         <div className="pt-12 grid grid-cols-1 gap-10 lg:grid-cols-2">
           <TooltipProvider>
             {pricingItems.map(({ plan, tagline, quota, features }) => {
-              const price = 2;
+              const price = 99;
 
               return (
                 <div
